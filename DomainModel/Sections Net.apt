@@ -1,0 +1,26 @@
+.name "Sections Net"
+.type PN
+
+.places
+section_1
+section_2
+section_3
+student
+
+.transitions
+enroll
+enroll
+enroll
+drop
+drop
+drop
+
+.flows
+enroll: {1*student} -> {1*section_1}
+enroll: {1*student} -> {1*section_2}
+enroll: {1*student} -> {1*section_3}
+drop: {1*section_1} -> {1*student}
+drop: {1*section_2} -> {1*student}
+drop: {1*section_3} -> {1*student}
+
+.initial_marking {1*student}

@@ -1,0 +1,17 @@
+.name "Capacity Net 2"
+.type PN
+
+.places
+stud_generator
+max
+course
+
+.transitions
+enroll
+drop
+
+.flows
+enroll: {1*stud_generator, 1*max} -> {1*stud_generator, 1*course}
+drop: {1*course} -> {1*max}
+
+.initial_marking {1*stud_generator, 10*max}
